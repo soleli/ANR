@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="jquery.mobile/jquery.mobile-1.4.5.css">
+		<link rel="stylesheet" type="text/css" href="jquery.mobile/icon-pack-custom.css">
+		<SCRIPT TYPE="text/javascript" src="js/main.js"></SCRIPT>
+		<SCRIPT TYPE="text/javascript" src="jquery.mobile/jquery-1.7.2.min"></SCRIPT>
+		<SCRIPT TYPE="text/javascript" src="jquery.mobile/jquery.mobile-1.4.5.js"></SCRIPT>
+    </head>
+ <body onload="init();">
+ 
+ <!------------Pagina Principal--------->
+	<div data-role="page" id="principal" data-title="Principal">
+			
+			<div  data-role="panel" data-display="overlay" data-position="left" id="panel1">
+				<div data-role="header" class="ui-b" data-theme="b"> <h1 >Menu</h1>
+				<a class="ui-btn-right" href="#demo-links" data-rel="close" data-icon="delete" data-role="button" data-iconpos="notext"></a>
+				</div>
+				<div data-role="content">
+					<ul data-role="listview" style="margin:0px"> 
+						<li> <a onclick="tapa('1')" data-transition='flip' href="#noticia1"  > Tapa del D&iacutea </a></li>
+						<li> <a onclick="noticias('1')" data-transition='flip' href="#todas"  > Pol&iacutetica </a></li>
+						<li> <a onclick="noticias('2')" data-transition='flip' href="#todas"  > Informaci&oacuten General</a></li>
+						<li> <a onclick="noticias('3')" data-transition='flip' href="#todas"  > Interior</a></li>
+						<li> <a onclick="noticias('4')" data-transition='flip' href="#todas"> Deportes</a></li>
+						<li> <a onclick="noticias('5')" data-transition='flip' href="#todas"> Policiales</a></li>
+						<li> <a onclick="noticias('6')" data-transition='flip' href="#todas"> Cultura </a></li>
+						<li> <a onclick="noticias('7')"  data-transition='flip' href="#todas"> Espet&aacuteculos </a></li>
+						<li> <a onclick="noticias('8')"  data-transition='flip' href="#todas"> &Uacuteltimas Noticias </a></li>
+						<li> <a href="#contacto"  data-transition='flip' > Contacto</a></li>
+					</ul>
+					
+				</div>
+				<div data-role="footer" class="ui-f" data-theme="f">
+				</div>
+			</div>
+			<div data-role="header"  data-id="fijo" data-position="fixed" class="ui-b" data-theme="b" style="  padding: 5px 0px 5px 0px;">
+				<img src="img/logo-min.jpg" style="  width: 80%;  float: right;">
+				<a href="#panel1" id="butonham" data-role="button" data-icon="bars" data-icompos="no-text" data-theme="b"></a>
+				
+			</div>
+			<div data-role="content" class="ui-fondo" data-theme="fondo">
+			<center><img id="cargando"  src="img/load.gif" ></center>
+				<div id="ultimo"></div>
+				<div id="primera"></div>
+				<div id="secundarias" ></div>
+				
+			</div>
+			<div data-role="footer" >
+				<center>www.nuevarioja.com.ar</center>
+			</div>
+			
+	</div>
+ <!------------Pagina Noticia Indivudual--------->
+	<div data-role="page"   id="noticia1">
+	
+			
+			<div data-role="header" data-position="fixed" class="ui-b" data-theme="b">
+				<img src="img/logo-min.jpg" style="width: 80%;">
+				<a href="#" class="ui-btn-right" data-role="button" data-icon="back" data-rel="back" data-iconpos="notext"></a>
+			</div>
+			<div data-role="content" class="ui-fondo" data-theme="fondo">
+				<center><img id="cargando2" class="cargando"  src="img/load.gif" ></center>
+				<div id="noticia"></div>
+			</div>
+			<div data-role="footer" data-id="fijo" data-position="fixed" >
+				<div data-role="navbar" id="iconos">
+					
+				</div>
+			</div>
+	</div>
+	
+	 <!------------Pagina Seccion Noticias--------->
+	<div data-role="page" id="todas">
+	
+			
+			<div data-role="header" data-position="fixed" class="ui-b" data-theme="b">
+				<img src="img/logo-min.jpg" style="width: 80%;">
+				<a href="#" class="ui-btn-right" data-role="button" data-icon="back" data-rel="back" data-iconpos="notext"></a>
+				
+				
+			</div>
+			<div data-role="content" class="ui-fondo"  data-theme="fondo">
+			<form class="ui-filterable">
+			<input id="filtronoticia" data-type="search"></form>
+			<ul data-role="listview" data-filter="true" data-input="#filtronoticia"		data-inset="true"	id="noticias"> </div>
+			<center><img id="cargando1" class="cargando" src="img/load.gif" ></center>
+			</div>
+			<div data-role="footer" >
+				
+			</div>
+	</div>
+	 
+	
+	
+	
+	 <!------------Pagina Contacto--------->
+	<div data-role="page" id="contacto">
+			
+			<div data-role="header" data-position="fixed" class="ui-b" data-theme="b">
+				<img src="img/logo-min.jpg" style="width: 80%;">
+				<a href="#" class="ui-btn-right" data-role="button" data-icon="back" data-rel="back" data-iconpos="notext"></a>
+				
+			</div>
+			<div data-role="content" class="ui-fondo"  data-theme="fondo">
+				<div data-role="fieldcontain">
+					<div id="alertaco"> </div>
+				   <input name="" id="nombre" placeholder="Ingrese su Nombre" value=""
+					  type="text" data-mini="true"><br>
+				   <textarea name="" id="mensaje" placeholder="Su mensaje" data-mini="false"></textarea>
+				   <br>
+				   <input id="btnDefaultSMS"  onclick="enviarcorreo()" type="submit" data-theme="e"
+					  value="Enviar" data-mini="false">
+				</div>
+			</div>
+			<div data-role="footer" >
+			</div>
+	</div>
+	
+  </body>
+ 
+		<SCRIPT TYPE="text/javascript" src="js/phonegap-1.4.1.js"></SCRIPT>
+		<SCRIPT TYPE="text/javascript" src="js/jquery-2.0.3.js"></SCRIPT>
+	<script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+</html>
