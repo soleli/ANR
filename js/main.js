@@ -78,18 +78,20 @@ $("#cargando2").css("display","inlineblock");
  }
  
  function tapa(id) {
-
+$("#iconos").html (" "); 
  $("#noticia").html (" "); 
 	archivoValidacion = "http://nuevarioja.com.ar/Anr/tapa.php?jsoncallback=?"
 		$.getJSON( archivoValidacion, {id:id})
 	.done(function(data) 
 	{
+
 		$("#noticia").append(
 							
 								
 									"<img style='width:100%' src='http://nuevarioja.com.ar/imgdin/edicion_hoy/"+data.id_edicion+".jpg'>"
 									
 									);
+			
 							
 $("#cargando2").css("display","none");
 	});
@@ -111,13 +113,14 @@ function init()
 		$(data2).each(function (index, data2) {
 		
 			$("#ultimo").append(
-			"<a href='#noticia1' data-transition='flip'  onclick='cargar("+data2.id_Noticia+");'><p class='ultimo'> &Uacuteltimo momento </P>"+
-			"<div > <a  onclick='redsocial("+1+","+data2.id_Noticia+")'><span class='icon-whatsapp'></span></a>"+
-		"<a onclick='redsocial("+2+","+data2.id_Noticia+")'><span class='icon-facebook'></span></a>"+
-		"<a onclick='redsocial("+3+","+data2.id_Noticia+")'><span class='icon-twitter'></span></a></div>"+
+			"<a href='#noticia1' data-transition='flip'  onclick='cargar("+data2.id_Noticia+");'><p class='ultimo'> &UacuteLTIMO MOMENTO </P>"+
+			
 									"  <div data-theme='b'> "+
 									"<p class='titulo-ultimo'>"+data2.titulo+"</p> "+
-									"</div></a>"
+									"</div></a>"+
+									"<div style='margin:8px' > <a  onclick='redsocial("+1+","+data2.id_Noticia+")'><span class='icon-whatsapp'></span></a>"+
+		"<a onclick='redsocial("+2+","+data2.id_Noticia+")'><span class='icon-facebook'></span></a>"+
+		"<a onclick='redsocial("+3+","+data2.id_Noticia+")'><span class='icon-twitter'></span></a></div>"
 									
 								);
 		});
