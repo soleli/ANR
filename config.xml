@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="www.nuevarioja.com.ar" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Nueva Rioja</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+       Aplicación de noticias y actualidad de La Rioja   .
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
+    <author email="clientes@wabes.com.ar" href="http://wabes.com.ar">
        Alaniz Eliana
     </author>
     <content src="index.html" />
