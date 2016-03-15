@@ -183,7 +183,7 @@ function init()
 	
 	
 	 function enviarcorreo(){
-             
+             	$("#alertaco").html (" "); 
              	var number = $("#nombre").val();
              	var message = $("#mensaje").val();
 				archivoValidacion = "http://nuevarioja.com.ar/Anr//formulario.php?jsoncallback=?"
@@ -197,7 +197,10 @@ function init()
              }); 
       }
 		 
+	function contacto(){
+	$("#alertaco").html (" "); 
 	
+	}
                  
 		
 		

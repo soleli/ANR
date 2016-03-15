@@ -163,3 +163,13 @@ ul  .icon-whatsapp:before {
  font-size: 30px !important;
  border-radius: 30px !important;
 }
+
+#alertaco{
+background: #C8E4C8;
+    text-align: center;
+    text-shadow: none;
+  font-size: 18px;
+    width: 100%;
+    margin-bottom: 13px;
+   
+}
